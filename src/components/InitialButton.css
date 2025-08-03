@@ -1,0 +1,212 @@
+.initial-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.content-wrapper {
+  text-align: center;
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.main-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #e8f4fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  animation: float 3s ease-in-out infinite;
+}
+
+.subtitle-section {
+  margin-bottom: 50px;
+}
+
+.main-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-subtitle:first-child {
+  margin-bottom: 8px;
+}
+
+.cta-section {
+  margin-bottom: 0;
+}
+
+.discount-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff8a80 100%);
+  color: white;
+  border: none;
+  padding: clamp(20px, 4vw, 30px) clamp(40px, 8vw, 60px);
+  border-radius: 50px;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 40px rgba(255, 107, 107, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto 15px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.discount-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.discount-btn:hover::before {
+  left: 100%;
+}
+
+.discount-btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(255, 107, 107, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.discount-btn:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.btn-text {
+  font-size: inherit;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.btn-icon {
+  font-size: 1.5em;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.cta-note {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Декоративные элементы */
+.initial-container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.initial-container::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 20px;
+  }
+  
+  .logo-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+  
+  .main-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .discount-btn {
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .main-subtitle {
+    font-size: 1rem;
+  }
+  
+  .subtitle-section {
+    margin-bottom: 40px;
+  }
+  
+  .logo-icon {
+    font-size: 2rem;
+  }
+  
+  .discount-btn {
+    padding: 20px 25px;
+    font-size: 1.1rem;
+  }
+} 
